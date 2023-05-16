@@ -1,0 +1,26 @@
+.formWrapper {
+    width: 350px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.inputGroup {
+    margin-bottom: 10px;
+}
+
+
+@media screen and (min-width: 768px) {
+    .formWrapper {
+        width: 600px; 
+    }
+}
