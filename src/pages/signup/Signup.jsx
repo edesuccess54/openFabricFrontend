@@ -6,7 +6,7 @@ const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { signup, isLoading, error } = useSignup()
+  const { signup, isLoading, error } = useSignup(`${process.env.REACT_APP_API_URL}/api/users/signup`)
 
   const handleSignup = async (e) => {
     e.preventDefault();

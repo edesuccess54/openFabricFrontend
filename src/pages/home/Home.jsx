@@ -6,7 +6,7 @@ import homeStyles from './home.module.css'
 
 
 const Home = () => {
-    const {data:products, isPending, isError} = useFetch('http://localhost:2030/api/products')    
+    const {data:products, isPending, isError} = useFetch(`${process.env.REACT_APP_API_URL}/api/products`)    
   return (
       <div className={homeStyles.productsWrapper}>
           {isPending && <p>Loading...</p>}

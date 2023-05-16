@@ -5,7 +5,7 @@ import {useLogin} from '../../hooks/useLogin'
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { login, isLoading, error} = useLogin(`${process.env.REACT_APP_UR}/api/users/login`)
+  const { login, isLoading, error} = useLogin(`${process.env.REACT_APP_API_URL}/api/users/login`)
   
   const handleLogin = async (event) => {
     event.preventDefault();

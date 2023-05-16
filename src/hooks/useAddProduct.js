@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { useAuthContext } from "./useAuthContext";
 
 
-export const useAddProduct = () => {
+export const useAddProduct = (url) => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const { user } = useAuthContext()
+    const navigate = useNavigate()
 
     const addProduct = async (name, price, discount, desc, image) => {
         setIsLoading(true);
@@ -20,7 +22,7 @@ export const useAddProduct = () => {
             formData.append('desc', desc);
             formData.append('image', image);
 
-            const response = await fetch('http://localhost:2030/api/products/create', {
+            const response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${user.token}`
@@ -29,18 +31,17 @@ export const useAddProduct = () => {
                 
             })
 
-            const json = await response.json()
-        
             if (!response.ok) {
-                setIsLoading(false)
-                setError(json.error)
+                throw new Error("Product failed to create")
             }
 
-            if (response.ok) {
-  
+            const json = await response.json()
 
-                setIsLoading(false)
-            }
+            if (json.error) {
+                throw new Error(json.error)
+            } else {
+                navigate('/')
+             }
       
         } catch (error) {
             setIsLoading(false)

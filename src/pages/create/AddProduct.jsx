@@ -9,7 +9,7 @@ const AddProduct = () => {
   const [desc, setDesc] = useState('');
   const [image, setImage] = useState('');
 
-  const { addProduct, isLoading, error } = useAddProduct()
+  const { addProduct, isLoading, error } = useAddProduct(`${process.env.REACT_APP_API_URL}/api/products/create`)
 
   const handleImageChange = (event) => {
     setImage(event.target.files[0])

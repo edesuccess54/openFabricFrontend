@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { useAuthContext } from "./useAuthContext";
 
 
@@ -6,6 +7,7 @@ export const useEditProduct = (url) => {
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const { user } = useAuthContext()
+    const navigate = useNavigate()
 
     const updateProduct = async (name, price, discount, desc, image) => {
         setIsLoading(true);
@@ -29,16 +31,16 @@ export const useEditProduct = (url) => {
                 
             })
 
-            const json = await response.json()
-        
             if (!response.ok) {
-                setIsLoading(false)
-                setError(json.error)
+                throw new Error("Product update failed")
             }
 
-            if (response.ok) {
-  
-                setIsLoading(false)
+            const json = await response.json()
+
+            if (json.error) {
+                throw new Error(json.error)
+            } else {
+                navigate('/')
             }
       
         } catch (error) {

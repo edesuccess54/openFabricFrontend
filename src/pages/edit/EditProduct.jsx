@@ -14,8 +14,8 @@ const EditProduct = () => {
   const { id } = useParams()
   const { user } = useAuthContext()
 
-  const { updateProduct, isLoading, error } = useEditProduct(`http://localhost:2030/api/products/update/${id}`)
-  const { data, isLoading: isPending, error: isError } = useFetchSingle(`http://localhost:2030/api/products/${id}`) 
+  const { updateProduct, isLoading, error } = useEditProduct(`${process.env.REACT_APP_API_URL}/api/products/update/${id}`)
+  const { data, isLoading: isPending, error: isError } = useFetchSingle(`${process.env.REACT_APP_API_URL}/api/products/${id}`) 
 
   const handleImageChange = (event) => {
     setImage(event.target.files[0])

@@ -9,8 +9,8 @@ import { useDelete } from '../../hooks/useDelete'
 const ProductDetail = () => {
     const { user } = useAuthContext()
     const { id } = useParams();
-    const { data, isLoading, error } = useFetchSingle(`http://localhost:2030/api/products/${id}`)
-     const { deleteProduct, error: deleteError } = useDelete(`http://localhost:2030/api/products/delete/${id}`)
+    const { data, isLoading, error } = useFetchSingle(`${process.env.REACT_APP_API_URL}/api/products/${id}`)
+     const { deleteProduct, error: deleteError } = useDelete(`${process.env.REACT_APP_API_URL}/api/products/delete/${id}`)
 
   
     const handleDelete = async () => {
