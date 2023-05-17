@@ -21,8 +21,6 @@ const EditProduct = () => {
     setImage(event.target.files[0])
   }
 
-  console.log('this is the image: ', image)
-
   const handleSubmit = async (e) => {
     e.preventDefault()
 

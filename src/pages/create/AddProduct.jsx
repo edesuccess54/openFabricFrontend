@@ -31,6 +31,7 @@ const AddProduct = () => {
             type="text"
             id='pname'
             value={name}
+            required
             onChange= {(e) => setName(e.target.value)}
           />
         </div>
@@ -41,6 +42,7 @@ const AddProduct = () => {
             type="text"
             id='pname'
             value={price}
+            required
             onChange= {(e) => setPrice(e.target.value)}
           />
         </div>
@@ -51,6 +53,7 @@ const AddProduct = () => {
             name="option"
             id="discount"
             value={discount}
+            required
             onChange= {(e) => setDiscount(e.target.value)}
           >
             <option >Select Discount</option>
@@ -68,6 +71,7 @@ const AddProduct = () => {
             type="file"
             name="image"
             id='pimage'
+            required
 
             onChange={handleImageChange}
           />
@@ -81,6 +85,7 @@ const AddProduct = () => {
             cols="30"
             rows="5"
             value={desc}
+            required
             onChange={(e) => setDesc(e.target.value)}
           ></textarea>
         </div>

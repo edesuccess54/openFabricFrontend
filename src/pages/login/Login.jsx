@@ -22,8 +22,8 @@ const Login = () => {
                 <input 
                   type="text"
                   id='email'
-            value={email}
-            required
+                  value={email}
+                  required
                   onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -33,10 +33,10 @@ const Login = () => {
                 <input
                   type="password"
                   id='pwd'
-            value={password}
-            required
+                  value={password}
+                  required
                   onChange={(e) => setPassword(e.target.value)}
-          />
+            />
             </div>
 
         {error && <p className="error">{error }</p> }
