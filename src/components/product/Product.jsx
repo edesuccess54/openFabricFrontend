@@ -16,7 +16,7 @@ const Product = (props) => {
                         <span className={productSyles.discountPrice}>${ (productPrice) - ((priceDiscount/100)*(productPrice)) }</span>
                         <span className={productSyles.actualprice}>${ productPrice }</span>
                   </div>
-                  <span className={productSyles.percentage}>{ priceDiscount }%</span>
+                  <span className={productSyles.percentage}>-{ priceDiscount }%</span>
                 </div>
             </div>
         </Link>

@@ -1,5 +1,6 @@
 .formWrapper {
-    max-width: 400px;
+    width: 350px;
+    max-width: 500px;
     margin: 0 auto;
     margin-top: 40px;
     background: #fff;
@@ -15,4 +16,10 @@ h2 {
 
 .inputGroup {
     margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .formWrapper {
+        width: 500px;
+    }
 }

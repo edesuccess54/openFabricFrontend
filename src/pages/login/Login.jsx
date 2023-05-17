@@ -22,7 +22,8 @@ const Login = () => {
                 <input 
                   type="text"
                   id='email'
-                  value={email}
+            value={email}
+            required
                   onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -32,7 +33,8 @@ const Login = () => {
                 <input
                   type="password"
                   id='pwd'
-                  value={password}
+            value={password}
+            required
                   onChange={(e) => setPassword(e.target.value)}
           />
             </div>

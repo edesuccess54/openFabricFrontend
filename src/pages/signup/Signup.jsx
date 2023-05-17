@@ -22,7 +22,8 @@ const Signup = () => {
                 <input
                 type="text"
                 id='name'
-                value={name}
+            value={name}
+            required
                 onChange = {(e) => setName(e.target.value)}
                 />
             </div>
@@ -32,7 +33,8 @@ const Signup = () => {
                 <input
                 type="text"
                 id='email'
-                value={email}
+            value={email}
+            required
                 onChange = {(e) => setEmail(e.target.value)}
                 />
             </div>
@@ -42,7 +44,8 @@ const Signup = () => {
                 <input
                 type="password"
                 id='pwd'
-                value={password}
+            value={password}
+            required
                 onChange = {(e) => setPassword(e.target.value)}
                 />
             </div>
