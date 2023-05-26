@@ -9,6 +9,11 @@
     background: #fff;
 }
 
+.descriptions {
+    padding-bottom: 30px;
+    margin-top: 10px;
+}
+
 .productImage {
     position: relative;
     display: flex;
@@ -25,18 +30,19 @@
 }
 
 .contentSection {
+    margin-top: 10px;
     position: relative;
     padding: 10px;
 }
 
 .action {
     position: absolute;
-    top: 20px;
-    right: 10px;
+    bottom: 10px;
+    right:10px;
 }
 
 .action span{
-    font-size: 16px;
+    font-size: 18px;
     margin: 0 3px;
     cursor: pointer;
 }
@@ -98,5 +104,13 @@
 @media  screen and (min-width: 768px){
     .detailwrapper {
         grid-template-columns: 1fr 3fr;
+    }
+
+    .descriptions {
+        padding-bottom: 0;
+        margin-top: 0;
+    }
+    .action {
+        top: 20px;
     }
 }
