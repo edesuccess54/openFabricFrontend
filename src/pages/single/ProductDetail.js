@@ -32,7 +32,7 @@ const ProductDetail = () => {
                 <span className={singleStyle.discountPrice}>${ (data.productPrice) - ((data.priceDiscount/100)*(data.productPrice)) }</span>
                 <span className={singleStyle.actualprice}>${data.productPrice}</span>
                 
-                <div className="descriptions">
+                <div className={singleStyle.descriptions}>
                     <p>{ data.productDesc}</p>
                 </div>
                 <div className={singleStyle.action}>
