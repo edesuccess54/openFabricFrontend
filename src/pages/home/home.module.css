@@ -11,9 +11,7 @@
 
 @media  screen and (min-width:767px){
     .productsWrapper {
-        display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        margin: 20px 0;
+        justify-items: center;
     }
 }
